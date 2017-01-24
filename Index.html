@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
   <head>
-    <script src="js/javascript-variable-exercises.js"></script>
   </head>
   <body>
     <h1>Calculator</h1>
@@ -17,12 +16,34 @@
     </div>
 
     <div>
+      Number: <input type="text" id="number">
+    </div>
+    <div>
       Percent: <input type="text" id="percent">
       <button id="calculatePercent"></button>
     </div>
+    <div id="squareOutput"></div>
+    <div id="halfOutput"></div>
+    <div id="percentOutput"></div>
+
     <script>
-     var number = prompt("Enter a number")
-     document.getElementById('output').innerHTML = 'when you are ' + age + ' you will live in ' + place + ', and make almost $' + salery + ' a year' + ' doing ' + job + ' for a living.' + ' Now that is what I call a good life!';
+     document.getElementById('calculateHalf')
+          .addEventListener('click', function() {
+          var halfOutputNumber = document.getElementById('half').value / 2;
+          document.getElementById('halfOutput').innerText = 'Halved: ' + halfOutputNumber;
+          });
+
+           document.getElementById('calculateSquare')
+          .addEventListener('click', function() {
+          var squareOutputNumber = document.getElementById('square').value * document.getElementById('square').value;
+          document.getElementById('squareOutput').innerText = 'Squared: ' + squareOutputNumber;
+        });
+
+           document.getElementById('calculatePercent')
+          .addEventListener('click', function() {
+          var percentOutputNumber = document.getElementById('number').value * document.getElementById('percent').value * .01;
+          document.getElementById('percentOutput').innerText = 'Percent: ' + percentOutputNumber;
+        });
     </script>
   </body>
 </html>
